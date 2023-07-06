@@ -6,4 +6,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}       
+
+.background {
+    position: relative;
+}
+
+.top-background {
+    background-color: #009688;
+    height: 150px;
+}
+
+.bottom-background {
+    background-color: #D8DBD5;
+    height: calc(100vh - 150px);
+}
+
+.container {
+    background-color: white;
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
