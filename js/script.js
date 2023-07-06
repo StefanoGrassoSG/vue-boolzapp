@@ -166,12 +166,14 @@ createApp({
                 ],
                 }
                 ],
-                activeIndex: null
+                activeIndex: null,
+                activeUser: null
         }
     },
     methods: {
         active(index) {
             this.activeIndex = index;
+            this.activeUser = this.contacts[index]
         }
     }
 }).mount('#app')

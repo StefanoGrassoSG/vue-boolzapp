@@ -63,7 +63,7 @@
 
                     <div class="contact-list-container">
                         <ul class="contacts-list">
-                            <li v-for="(singleContact, index) in contacts" @click="active(index)" :class="{'active': index === activeIndex}">
+                            <li v-for="(singleContact, index) in contacts" @click="active(index)" :class="{'active': index == activeIndex}">
                                 <div class="img-profile-contact">
                                     <img :src="singleContact.avatar" alt="singleContact.name">
                                 </div>
@@ -84,13 +84,13 @@
                     <header>
                         <div class="active-user">
                             <div class="active-user-img">
-                                <img src="img/avatar_2.jpg" alt="">
+                                <img :src="activeUser ? activeUser.avatar : ''" alt="">
                             </div>
                             <div class="user-active-data">
                                 <div class="user-active-name">
-                                    Michele
+                                    {{ activeUser ? activeUser.name : '' }}
                                 </div>
-                                <div class="last-log">
+                                <div class="last-log" v-if="activeUser">
                                     Ultimo accesso oggi alle 12:00
                                 </div>
                             </div>
