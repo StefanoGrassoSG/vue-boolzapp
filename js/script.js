@@ -165,7 +165,13 @@ createApp({
                     }
                 ],
                 }
-                ]
+                ],
+                activeIndex: null
+        }
+    },
+    methods: {
+        active(index) {
+            this.activeIndex = index;
         }
     }
 }).mount('#app')

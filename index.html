@@ -63,7 +63,7 @@
 
                     <div class="contact-list-container">
                         <ul class="contacts-list">
-                            <li v-for="singleContact in contacts">
+                            <li v-for="(singleContact, index) in contacts" @click="active(index)" :class="{'active': index === activeIndex}">
                                 <div class="img-profile-contact">
                                     <img :src="singleContact.avatar" alt="singleContact.name">
                                 </div>
@@ -103,7 +103,11 @@
                     </header>
 
                     <div class="chat-body">
-
+                        <div class="chat" v-for="singleMessage in contacts">
+                            <div class="message">
+                                
+                            </div>
+                        </div>
                     </div>
 
                     <div class="message-bar">
