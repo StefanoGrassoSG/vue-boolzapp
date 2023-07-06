@@ -103,10 +103,13 @@
                     </header>
 
                     <div class="chat-body">
-                        <div class="chat" v-if="activeUser !=null" v-for="singleMessage in activeUser.messages">
-                          <div class="message">
-                            {{ singleMessage.message }}
-                          </div>
+                        <div class="chat" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
+                            <div class="message-container" :class="messageStyle(singleMessage)">
+                                {{ singleMessage.message }}
+                                <div class="date">
+                                    {{ formatDate(singleMessage.date) }}
+                                </div>
+                            </div>
                         </div>
                     </div>                      
 

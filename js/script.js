@@ -32,17 +32,17 @@ createApp({
                 visible: true,
                 messages: [
                     {
-                    date: '20/03/2020 16:30:00',
+                    date: '2020/03/20 16:30:00',
                     message: 'Ciao come stai?',
                     status: 'sent'
                     },
                     {
-                    date: '20/03/2020 16:30:55',
+                    date: '2020/03/20 16:30:55',
                     message: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received'
                     },
                     {
-                    date: '20/03/2020 16:35:00',
+                    date: '2020/03/20 16:35:00',
                     message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'sent'
                     }
@@ -54,17 +54,17 @@ createApp({
                 visible: true,
                 messages: [
                     {
-                    date: '28/03/2020 10:10:40',
+                    date: '2020/03/28 10:10:40',
                     message: 'La Marianna va in campagna',
                     status: 'received'
                     },
                     {
-                    date: '28/03/2020 10:20:10',
+                    date: '2020/03/28 10:20:10',
                     message: 'Sicuro di non aver sbagliato chat?',
                     status: 'sent'
                     },
                     {
-                    date: '28/03/2020 16:15:22',
+                    date: '2020/03/28 16:15:22',
                     message: 'Ah scusa!',
                     status: 'received'
                     }
@@ -106,7 +106,7 @@ createApp({
                 },
                 {
                 name: 'Claudia',
-                avatar: './img/avatar_5.jpg',
+                avatar: './img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -174,6 +174,15 @@ createApp({
         active(index) {
             this.activeIndex = index;
             this.activeUser = this.contacts[index]
+        },
+
+        messageStyle(message) {
+            return message.status === 'received' ? 'left-mess' : 'right-mess';
+        },
+
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         }
     }
 }).mount('#app')
