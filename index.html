@@ -90,7 +90,7 @@
                                 <div class="user-active-name">
                                     {{ activeUser ? activeUser.name : '' }}
                                 </div>
-                                <div class="last-log" v-if="activeUser">
+                                <div class="last-log" v-if="activeUser != null">
                                     Ultimo accesso oggi alle 12:00
                                 </div>
                             </div>
@@ -103,12 +103,12 @@
                     </header>
 
                     <div class="chat-body">
-                        <div class="chat" v-for="singleMessage in contacts">
-                            <div class="message">
-                                
-                            </div>
+                        <div class="chat" v-if="activeUser !=null" v-for="singleMessage in activeUser.messages">
+                          <div class="message">
+                            {{ singleMessage.message }}
+                          </div>
                         </div>
-                    </div>
+                    </div>                      
 
                     <div class="message-bar">
                         <div class="smile">
