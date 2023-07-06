@@ -60,6 +60,25 @@
                     <div class="search-bar">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+
+                    <div class="contact-list-container">
+                        <ul class="contacts-list">
+                            <li v-for="singleContact in contacts">
+                                <div class="img-profile-contact">
+                                    <img :src="singleContact.avatar" alt="singleContact.name">
+                                </div>
+                                <div class="contact-data">
+                                    <div class="contact-name">
+                                        {{ singleContact.name }}
+                                    </div>
+                                    <span class="last">
+                                        Ultimo messaggio inviato
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>   
+                    </div>
+                   
                 </div>
                 <div class="right">
                     <header>

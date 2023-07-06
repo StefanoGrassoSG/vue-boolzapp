@@ -183,3 +183,44 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.contact-list-container {
+    height: calc(100% - 190px);
+    overflow-y: auto;
+}
+
+.contacts-list {
+    list-style: none;
+}
+
+.contacts-list > li {
+    height: 80px;
+    border-top: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+
+.contact-data {
+margin-left: 10px;
+margin-bottom: 15px;
+}
+
+.contact-data .contact-name {
+    font-weight: bold;
+}
+
+.contact-data .last {
+    color: grey;
+    font-size: 12px;
+}
+
+.img-profile-contact {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+}
+
+.img-profile-contact > img {
+    width: 100%;
+    border-radius: 50%;
+}
