@@ -6,6 +6,10 @@
         <title>Boolzapp con Vue</title>
         <!--CSS-->
         <link rel="stylesheet" href="css/style.css">
+        <!--FONTAWESOME-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--VUE-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
         
@@ -19,8 +23,80 @@
             </div>
 
 
-            <div class="container">
-                
+            <div id="app" class="container">
+                <div class="left">
+                    <header>
+                        <div class="profile">
+                            <div class="profile-img">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="my-name">
+                                Stefano
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-circle-notch fa-lg" style="color: #85878a;"></i>
+                            <i class="fa-solid fa-message fa-lg" style="color: #85878a;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #85878a;"></i>
+                        </div>
+                    </header>
+
+                    <div class="notifications">
+                        <div class="bell">
+                            <i class="fa-solid fa-bell-slash fa-lg" style="color: #8EDAFC;"></i>
+                        </div>
+                        <div class="text">
+                            <div>
+                                Ricevi notifiche di nuovi messaggi
+                            </div>
+                            <span>
+                                <a href="">
+                                    Attiva notifiche desktop
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="search-bar">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <div class="right">
+                    <header>
+                        <div class="active-user">
+                            <div class="active-user-img">
+                                <img src="img/avatar_2.jpg" alt="">
+                            </div>
+                            <div class="user-active-data">
+                                <div class="user-active-name">
+                                    Michele
+                                </div>
+                                <div class="last-log">
+                                    Ultimo accesso oggi alle 12:00
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="icons">
+                            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #85878a;"></i>
+                            <i class="fa-solid fa-paperclip fa-lg" style="color: #85878a;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #85878a;"></i>
+                        </div>
+                    </header>
+
+                    <div class="chat-body">
+
+                    </div>
+
+                    <div class="message-bar">
+                        <div class="smile">
+                            <i class="fa-regular fa-face-smile fa-lg" style="color: #85878a;"></i>
+                        </div>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <div class="micro">
+                            <i class="fa-solid fa-microphone fa-lg" style="color: #85878a;"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
