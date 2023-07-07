@@ -167,7 +167,8 @@ createApp({
                 }
                 ],
                 activeIndex: null,
-                activeUser: null
+                activeUser: null,
+                newMess: ''
         }
     },
     methods: {
@@ -183,6 +184,20 @@ createApp({
         formatDate(dateString) {
             const date = new Date(dateString);
             return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        },
+
+        newMessage() {
+            if (this.newMess) {
+              const newMessage = {
+                date: new Date().toLocaleString(),
+                message: this.newMess,
+                status: 'sent'
+              };
+          
+              this.activeUser.messages.push(newMessage);
+              this.newMess = ''; 
+            }
         }
+          
     }
 }).mount('#app')

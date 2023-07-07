@@ -117,7 +117,7 @@
                         <div class="smile">
                             <i class="fa-regular fa-face-smile fa-lg" style="color: #85878a;"></i>
                         </div>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="newMessage()" v-model="newMess">
                         <div class="micro">
                             <i class="fa-solid fa-microphone fa-lg" style="color: #85878a;"></i>
                         </div>
