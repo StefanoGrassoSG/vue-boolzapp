@@ -251,6 +251,7 @@ margin-bottom: 15px;
     margin-bottom: 10px;
     position: relative;
     user-select: none;
+    cursor: pointer;
 }
 
 .left-mess {
@@ -269,4 +270,20 @@ margin-bottom: 15px;
     right: 0;
     bottom: 0;
     padding: 5px;
+}
+
+.dropdown {
+    padding: 20px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.dropdown > div {
+    margin-bottom: 10px;
+}
+
+.dropdown > * {
+    cursor: pointer;
 }

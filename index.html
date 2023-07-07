@@ -106,10 +106,19 @@
                     </header>
 
                     <div class="chat-body">
-                        <div @click.right.prevent="openMenu()" class="message-container" :class="messageStyle(singleMessage)" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
+                        <div @click.right.prevent="openMenu(singleMessage)" class="message-container" :class="messageStyle(singleMessage)" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
                                 {{ singleMessage.message }}
                             <div class="date">
                                 {{ formatDate(singleMessage.date) }}
+                            </div>
+
+                            <div class="dropdown" v-if="singleMessage.showMenu">
+                                <div>
+                                    Info messaggio
+                                </div>
+                                <div class="delete" @click="deleteMessage(singleMessage)">
+                                    Cancella messaggio
+                                </div>
                             </div>
                         </div>
                     </div>                      

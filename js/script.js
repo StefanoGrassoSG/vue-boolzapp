@@ -169,7 +169,8 @@ createApp({
                 activeIndex: null,
                 activeUser: null,
                 newMess: '',
-                searchUser: ''
+                searchUser: '',
+                showMenu: false
         }
     },
     methods: {
@@ -228,8 +229,20 @@ createApp({
               });
         },
           
-        openMenu() {
-            console.log('clicato destro')
+        openMenu(message) {
+            this.activeUser.messages.forEach((msg) => {
+              msg.showMenu = false;
+            });
+          
+            message.showMenu = true;
+        },
+
+        deleteMessage(message) {
+            const index = this.activeUser.messages.indexOf(message);
+            if (index > -1) {
+              this.activeUser.messages.splice(index, 1);
+            }
         }
+          
     }
 }).mount('#app')
