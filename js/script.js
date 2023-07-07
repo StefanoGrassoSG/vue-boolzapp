@@ -187,7 +187,7 @@ createApp({
         },
 
         newMessage() {
-            if (this.newMess) {
+            if (this.newMess != '') {
               const newMessage = {
                 date: new Date().toLocaleString(),
                 message: this.newMess,
@@ -197,6 +197,20 @@ createApp({
               this.activeUser.messages.push(newMessage);
               this.newMess = ''; 
             }
+
+            this.sendResponse();
+        },
+
+        sendResponse() {
+            setTimeout(() => {
+                const response ={
+                    date: new Date().toLocaleDateString(),
+                    message: 'ok',
+                    status: 'received'
+                };
+
+                this.activeUser.messages.push(response)
+            }, 1000)
         }
           
     }
