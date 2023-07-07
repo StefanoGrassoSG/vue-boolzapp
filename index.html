@@ -75,7 +75,7 @@
                                     {{ singleContact.name }}
                                   </div>
                                   <span class="last">
-                                    {{ formatDate(singleContact.messages[singleContact.messages.length - 1].date) }}: {{ singleContact.messages[singleContact.messages.length - 1].message }}
+                                    {{ lastMessageHour(singleContact) }}: {{ lastMessageText(singleContact) }}
                                   </span>
                                 </div>
                               </li>                              
@@ -94,7 +94,7 @@
                                     {{ activeUser ? activeUser.name : '' }}
                                 </div>
                                 <div class="last-log" v-if="activeUser != null">
-                                    {{ isTyping ? 'Sta scrivendo...' : `Ultimo accesso oggi alle ${lastMessage(activeUser)}` }}
+                                    {{ isTyping ? 'Sta scrivendo...' : `Ultimo accesso oggi alle ${lastMessageHour(activeUser)}` }}
                                 </div>
                             </div>
                         </div>    

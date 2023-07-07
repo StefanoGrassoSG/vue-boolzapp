@@ -250,7 +250,7 @@ createApp({
             }
         },
 
-        lastMessage(user) {
+        lastMessageHour(user) {
             let lastReceivedTime = null;
             for (let i = user.messages.length - 1; i >= 0; i--) {
             const message = user.messages[i];
@@ -260,7 +260,19 @@ createApp({
             }
             }
             return lastReceivedTime;
-        }
+        },
+
+        lastMessageText(user) {
+            let lastReceivedText = null;
+            for (let i = user.messages.length - 1; i >= 0; i--) {
+              const message = user.messages[i];
+              if (message.status === 'received') {
+                lastReceivedText = message.message;
+                break;
+              }
+            }
+            return lastReceivedText;
+        }          
 
     }
 }).mount('#app')
