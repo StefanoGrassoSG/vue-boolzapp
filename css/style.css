@@ -123,10 +123,6 @@ body {
     margin: 0 10px;
 }
 
-.left .notifications .text {
-    word-spacing: -3px;
-}
-
 .left .notifications .text div:first-child {
    font-size: 15px;
    font-weight: bold;
@@ -253,6 +249,8 @@ margin-bottom: 15px;
     text-align: left;
     font-weight: 500;
     margin-bottom: 10px;
+    position: relative;
+    user-select: none;
 }
 
 .left-mess {

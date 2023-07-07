@@ -61,24 +61,24 @@
                         <div class="search-icon">
                             <i class="fa-solid fa-magnifying-glass" style="color: #85878a;"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchUser">
                     </div>
 
                     <div class="contact-list-container">
                         <ul class="contacts-list">
-                            <li v-for="(singleContact, index) in contacts" @click="active(index)" :class="{'active': index == activeIndex}">
+                            <li v-for="(singleContact, index) in filterContacts()" @click="active(index)" :class="(isActiveContact(singleContact) ? 'active' : '')">
                                 <div class="img-profile-contact">
-                                    <img :src="singleContact.avatar" alt="singleContact.name">
+                                  <img :src="singleContact.avatar" :alt="singleContact.name">
                                 </div>
                                 <div class="contact-data">
-                                    <div class="contact-name">
-                                        {{ singleContact.name }}
-                                    </div>
-                                    <span class="last">
-                                        Ultimo messaggio inviato
-                                    </span>
+                                  <div class="contact-name">
+                                    {{ singleContact.name }}
+                                  </div>
+                                  <span class="last">
+                                    Ultimo messaggio inviato
+                                  </span>
                                 </div>
-                            </li>
+                              </li>                              
                         </ul>   
                     </div>
                    
@@ -106,7 +106,7 @@
                     </header>
 
                     <div class="chat-body">
-                        <div class="message-container" :class="messageStyle(singleMessage)" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
+                        <div @click.right.prevent="openMenu()" class="message-container" :class="messageStyle(singleMessage)" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
                                 {{ singleMessage.message }}
                             <div class="date">
                                 {{ formatDate(singleMessage.date) }}
@@ -126,14 +126,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
 
         <script src="js/script.js"></script>    
     </body>

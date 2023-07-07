@@ -168,15 +168,23 @@ createApp({
                 ],
                 activeIndex: null,
                 activeUser: null,
-                newMess: ''
+                newMess: '',
+                searchUser: ''
         }
     },
     methods: {
         active(index) {
-            this.activeIndex = index;
-            this.activeUser = this.contacts[index]
+            const filteredContacts = this.filterContacts(); 
+            const originalIndex = this.contacts.indexOf(filteredContacts[index]);
+          
+            this.activeIndex = originalIndex;
+            this.activeUser = this.contacts[originalIndex];
         },
 
+        isActiveContact(contact) {
+            return contact === this.activeUser;
+        },
+          
         messageStyle(message) {
             return message.status === 'received' ? 'left-mess' : 'right-mess';
         },
@@ -203,15 +211,25 @@ createApp({
 
         sendResponse() {
             setTimeout(() => {
-                const response ={
-                    date: new Date().toLocaleDateString(),
+                const response = {
+                    date: new Date().toLocaleString(),
                     message: 'ok',
                     status: 'received'
                 };
 
                 this.activeUser.messages.push(response)
             }, 1000)
-        }
+        },
+
+        filterContacts() {
+            const searchValue = this.searchUser.toLowerCase();
+            return this.contacts.filter(function(contact) {
+                return contact.name.toLowerCase().includes(searchValue);
+              });
+        },
           
+        openMenu() {
+            console.log('clicato destro')
+        }
     }
 }).mount('#app')
