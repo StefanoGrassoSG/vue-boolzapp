@@ -250,5 +250,17 @@ createApp({
             }
         },
 
+        lastMessage(user) {
+            let lastReceivedTime = null;
+            for (let i = user.messages.length - 1; i >= 0; i--) {
+            const message = user.messages[i];
+            if (message.status === 'received') {
+                lastReceivedTime = this.formatDate(message.date);
+                break;
+            }
+            }
+            return lastReceivedTime;
+        }
+
     }
 }).mount('#app')
