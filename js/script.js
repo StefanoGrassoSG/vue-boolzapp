@@ -212,7 +212,10 @@ createApp({
         },
 
         sendResponse() {
-            this.isTyping = true;
+            setTimeout(() => {
+                this.isTyping = true;
+            }, 2000)
+           
             setTimeout(() => {
                 const response = {
                     date: new Date().toLocaleString(),
@@ -222,7 +225,7 @@ createApp({
 
                 this.activeUser.messages.push(response)
                 this.isTyping = false;
-            }, 4000)
+            }, 6000)
         },
 
         filterContacts() {
