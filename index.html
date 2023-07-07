@@ -94,7 +94,7 @@
                                     {{ activeUser ? activeUser.name : '' }}
                                 </div>
                                 <div class="last-log" v-if="activeUser != null">
-                                    Ultimo accesso oggi alle 12:00
+                                    {{ isTyping ? 'Sta scrivendo...' : 'Ultimo accesso oggi alle 12:00' }}
                                 </div>
                             </div>
                         </div>    

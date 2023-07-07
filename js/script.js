@@ -170,7 +170,8 @@ createApp({
                 activeUser: null,
                 newMess: '',
                 searchUser: '',
-                showMenu: false
+                showMenu: false,
+                isTyping: false
         }
     },
     methods: {
@@ -211,6 +212,7 @@ createApp({
         },
 
         sendResponse() {
+            this.isTyping = true;
             setTimeout(() => {
                 const response = {
                     date: new Date().toLocaleString(),
@@ -219,7 +221,8 @@ createApp({
                 };
 
                 this.activeUser.messages.push(response)
-            }, 1000)
+                this.isTyping = false;
+            }, 4000)
         },
 
         filterContacts() {
