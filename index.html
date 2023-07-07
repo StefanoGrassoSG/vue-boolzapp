@@ -75,7 +75,7 @@
                                     {{ singleContact.name }}
                                   </div>
                                   <span class="last">
-                                    Ultimo messaggio inviato
+                                    {{ formatDate(singleContact.messages[singleContact.messages.length - 1].date) }}: {{ singleContact.messages[singleContact.messages.length - 1].message }}
                                   </span>
                                 </div>
                               </li>                              

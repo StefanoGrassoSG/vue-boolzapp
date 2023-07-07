@@ -242,7 +242,7 @@ createApp({
             if (index > -1) {
               this.activeUser.messages.splice(index, 1);
             }
-        }
-          
+        },
+
     }
 }).mount('#app')
