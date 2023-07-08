@@ -116,7 +116,7 @@
                         </div>
                     </header>
 
-                    <div class="chat-body">
+                    <div class="chat-body" @click="closeMenu()">
                         <div @click.right.prevent="openMenu(singleMessage)" class="message-container" :class="messageStyle(singleMessage)" v-if="activeUser != null" v-for="singleMessage in activeUser.messages">
                                 {{ singleMessage.message }}
                             <div class="date">

@@ -244,6 +244,12 @@ createApp({
             message.showMenu = true;
         },
 
+        closeMenu() {
+            this.activeUser.messages.forEach((msg) => {
+                msg.showMenu = false;
+              });
+        },
+
         deleteMessage(message) {
             const index = this.activeUser.messages.indexOf(message);
             if (index >= 0) {
