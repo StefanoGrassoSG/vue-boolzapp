@@ -184,11 +184,11 @@ createApp({
         },
 
         isActiveContact(contact) {
-            return contact === this.activeUser;
+            return contact == this.activeUser ? 'active' : ''
         },
           
         messageStyle(message) {
-            return message.status === 'received' ? 'left-mess' : 'right-mess';
+            return message.status == 'received' ? 'left-mess' : 'right-mess';
         },
 
         formatDate(dateString) {
@@ -229,10 +229,11 @@ createApp({
         },
 
         filterContacts() {
-            const searchValue = this.searchUser.toLowerCase();
-            return this.contacts.filter(function(contact) {
-                return contact.name.toLowerCase().includes(searchValue);
-              });
+            const searchWords = this.searchUser.toLowerCase();
+            return this.contacts.filter(contact => {
+              const contactName = contact.name.toLowerCase();
+              return contactName.includes(searchWords);
+            });
         },
           
         openMenu(message) {
