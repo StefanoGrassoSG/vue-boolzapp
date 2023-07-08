@@ -246,7 +246,7 @@ createApp({
 
         deleteMessage(message) {
             const index = this.activeUser.messages.indexOf(message);
-            if (index > -1) {
+            if (index >= 0) {
               this.activeUser.messages.splice(index, 1);
             }
         },

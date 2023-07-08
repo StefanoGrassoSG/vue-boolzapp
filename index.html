@@ -94,7 +94,12 @@
                                     {{ activeUser ? activeUser.name : '' }}
                                 </div>
                                 <div class="last-log" v-if="activeUser != null">
-                                    {{ isTyping ? 'Sta scrivendo...' : `Ultimo accesso oggi alle ${lastMessageHour(activeUser)}` }}
+                                    <div v-if="isTyping">
+                                        'Sta scrivendo...'
+                                    </div>
+                                    <div v-else-if="lastMessageHour(activeUser) !== null">
+                                        Ultimo accesso oggi alle {{ lastMessageHour(activeUser) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>    
