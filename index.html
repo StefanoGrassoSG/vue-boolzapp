@@ -75,8 +75,11 @@
                                     {{ singleContact.name }}
                                   </div>
                                   <span class="last">
-                                    {{ lastMessageHour(singleContact) }}: {{ lastMessageText(singleContact) }}
+                                    {{ lastMessageHour(singleContact) }} 
                                   </span>
+                                  <div class="last">
+                                    {{ lastMessageText(singleContact) }}
+                                  </div>
                                 </div>
                               </li>                              
                         </ul>   
@@ -99,6 +102,9 @@
                                     </div>
                                     <div v-else-if="lastMessageHour(activeUser) !== null">
                                         Ultimo accesso oggi alle {{ lastMessageHour(activeUser) }}
+                                    </div>
+                                    <div v-else>
+                                        Offline
                                     </div>
                                 </div>
                             </div>

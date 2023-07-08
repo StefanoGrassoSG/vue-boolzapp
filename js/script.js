@@ -171,7 +171,7 @@ createApp({
                 newMess: '',
                 searchUser: '',
                 showMenu: false,
-                isTyping: false
+                isTyping: false,
         }
     },
     methods: {
@@ -273,7 +273,7 @@ createApp({
               }
             }
             return lastReceivedText;
-        }          
+        }
 
     }
 }).mount('#app')
