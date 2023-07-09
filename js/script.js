@@ -182,6 +182,14 @@ createApp({
             this.activeIndex = originalIndex;
             this.activeUser = this.contacts[originalIndex];
         },
+
+        filterContacts() {
+            const searchWords = this.searchUser.toLowerCase();
+            return this.contacts.filter(contact => {
+              const contactName = contact.name.toLowerCase();
+              return contactName.includes(searchWords);
+            });
+        },
           
         messageStyle(message) {
             return message.status == 'received' ? 'left-mess' : 'right-mess';
@@ -207,6 +215,13 @@ createApp({
             this.sendResponse();
         },
 
+        deleteMessage(message) {
+            const index = this.activeUser.messages.indexOf(message);
+            if (index >= 0) {
+              this.activeUser.messages.splice(index, 1);
+            }
+        },
+
         sendResponse() {
             setTimeout(() => {
                 this.isTyping = true;
@@ -223,14 +238,6 @@ createApp({
                 this.isTyping = false;
             }, 6000)
         },
-
-        filterContacts() {
-            const searchWords = this.searchUser.toLowerCase();
-            return this.contacts.filter(contact => {
-              const contactName = contact.name.toLowerCase();
-              return contactName.includes(searchWords);
-            });
-        },
           
         openMenu(message) {
             this.activeUser.messages.forEach((msg) => {
@@ -244,13 +251,6 @@ createApp({
             this.activeUser.messages.forEach((msg) => {
                 msg.showMenu = false;
               });
-        },
-
-        deleteMessage(message) {
-            const index = this.activeUser.messages.indexOf(message);
-            if (index >= 0) {
-              this.activeUser.messages.splice(index, 1);
-            }
         },
 
         lastMessageHour(user) {
