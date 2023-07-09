@@ -182,10 +182,6 @@ createApp({
             this.activeIndex = originalIndex;
             this.activeUser = this.contacts[originalIndex];
         },
-
-        isActiveContact(contact) {
-            return contact == this.activeUser ? 'active' : ''
-        },
           
         messageStyle(message) {
             return message.status == 'received' ? 'left-mess' : 'right-mess';
